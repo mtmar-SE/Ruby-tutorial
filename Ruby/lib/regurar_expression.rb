@@ -18,3 +18,27 @@ puts text.scan /\d{2,5}-\d{1,4}-\d{4}/
 
 puts text.scan /\d{2,5}[-(]\d{1,4}[-)]\d{4}/
 # ()で囲われた数字にも対応
+
+document = <<-DOCUMENTS
+クープバゲットのパンは美味しかった。
+今日はクープ バゲットさんに行きました。
+クープ　バゲットのパンは最高。
+ジャムおじさんのパン、ジャムが入ってた。
+また行きたいです。クープ・バゲット。
+クープ・バケットのパン、売り切れだった（><）
+DOCUMENTS
+
+puts document.split(/\n/).grep(/クープ.?バ[ゲケ]ット/)
+# .は任意の一文字 ?は〜が一文字、またはなしを指定している。
+
+html = <<-HTML
+<select name="game_console">
+<option value="none"></option>
+<option value="wii_u" selected>Wii U</option>
+<option value="ps4">プレステ4</option><option value="gb">ゲームボーイ</option>
+</select>
+HTML
+
+replaced = html.gsub(/<option value="(\w+)"(?: selected)?>([^<]*)<\/option>/, '\1,\2')
+
+puts replaced
