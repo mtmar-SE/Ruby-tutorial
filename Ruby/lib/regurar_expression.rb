@@ -42,3 +42,17 @@ HTML
 replaced = html.gsub(/<option value="(\w+)"(?: selected)?>([^<]*)<\/option>/, '\1,\2')
 
 puts replaced
+
+txt = <<-TXT
+def hello(name)
+ 　 puts "Hello, \#{name}!"
+end
+
+hello　('Alice')
+          
+hello('Bob')
+	
+hello('Carol')
+TXT
+
+puts txt.gsub(/^[ \t]+$/)
