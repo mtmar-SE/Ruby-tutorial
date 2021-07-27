@@ -13,3 +13,10 @@ Freddie:vocal, Brian:guitar, John:bass, Roger:drum
 TEXT
 puts txt.scan(/\w+(?=:bass)/)
 # bassの直前の一文字以上の文字列を抜き出す
+
+sazae = <<-SAZAE
+つぼ焼きにしたサザエはおいしい
+日曜日にやってるサザエさんは面白い
+SAZAE
+#サザエだけを取得。サザエさんは取らない
+puts sazae.scan(/サザエ(?!さん)/)
