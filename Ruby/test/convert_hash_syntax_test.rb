@@ -10,7 +10,7 @@ class ConvertHashSyntaxTest < Minitest::Test
         :name => 'Alice',
         :age=>20,
         :gender  =>  :female
-      }
+      
     TEXT
     expected = <<~TEXT
       {
