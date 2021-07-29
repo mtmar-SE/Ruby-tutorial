@@ -20,3 +20,13 @@ sazae = <<-SAZAE
 SAZAE
 #サザエだけを取得。サザエさんは取らない
 puts sazae.scan(/サザエ(?!さん)/)
+
+if '123-4567' =~ /\d{3}-\d{4}/
+  puts 'マッチしました'
+else
+  puts 'マッチしませんでした。'
+end
+
+data = '私の誕生日は2000年5月30日です。'
+m = /(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/.match(data)
+puts m
